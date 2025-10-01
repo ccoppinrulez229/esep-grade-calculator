@@ -13,8 +13,8 @@ func TestGetGradeA(t *testing.T) {
 
 	actual_value := gradeCalculator.GetFinalGrade()
 
-	if expected_value != actual_value {
-		t.Errorf("Expected GetGrade to return '%s'; got '%s' instead", expected_value, actual_value)
+	if expected_value != string(actual_value[0]) {
+		t.Errorf("Expected GetGrade to return '%s'; got '%s' instead", expected_value, string(actual_value[0]))
 	}
 }
 
@@ -29,8 +29,8 @@ func TestGetGradeB(t *testing.T) {
 
 	actual_value := gradeCalculator.GetFinalGrade()
 
-	if expected_value != actual_value {
-		t.Errorf("Expected GetGrade to return '%s'; got '%s' instead", expected_value, actual_value)
+	if expected_value != string(actual_value[0]) {
+		t.Errorf("Expected GetGrade to return '%s'; got '%s' instead", expected_value, string(actual_value[0]))
 	}
 }
 
@@ -45,8 +45,8 @@ func TestGetGradeC(t *testing.T) {
 
 	actual_value := gradeCalculator.GetFinalGrade()
 
-	if expected_value != actual_value {
-		t.Errorf("Expected GetGrade to return '%s'; got '%s' instead", expected_value, actual_value)
+	if expected_value != string(actual_value[0]) {
+		t.Errorf("Expected GetGrade to return '%s'; got '%s' instead", expected_value, string(actual_value[0]))
 	}
 }
 
@@ -61,8 +61,8 @@ func TestGetGradeD(t *testing.T) {
 
 	actual_value := gradeCalculator.GetFinalGrade()
 
-	if expected_value != actual_value {
-		t.Errorf("Expected GetGrade to return '%s'; got '%s' instead", expected_value, actual_value)
+	if expected_value != string(actual_value[0]) {
+		t.Errorf("Expected GetGrade to return '%s'; got '%s' instead", expected_value, string(actual_value[0]))
 	}
 }
 
@@ -77,8 +77,8 @@ func TestGetGradeF(t *testing.T) {
 
 	actual_value := gradeCalculator.GetFinalGrade()
 
-	if expected_value != actual_value {
-		t.Errorf("Expected GetGrade to return '%s'; got '%s' instead", expected_value, actual_value)
+	if expected_value != string(actual_value[0]) {
+		t.Errorf("Expected GetGrade to return '%s'; got '%s' instead", expected_value, string(actual_value[0]))
 	}
 }
 
