@@ -85,7 +85,7 @@ func TestGetGradeF(t *testing.T) {
 func TestString(t *testing.T) {
 	expected_value := "assignment"
 	if Assignment.String() != expected_value {
-		t.Errorf("Expected string 'asignment' ; got '%s' instead", Assignment.String())
+		t.Errorf("Expected string 'assignment' ; got '%s' instead", Assignment.String())
 	}
 
 	expected_value = "exam"
@@ -96,5 +96,36 @@ func TestString(t *testing.T) {
 	expected_value = "essay"
 	if Essay.String() != expected_value {
 		t.Errorf("Expected string 'essay' ; got '%s' instead", Essay.String())
+	}
+}
+
+func TestPass(t *testing.T) {
+
+	gradeCalculator := NewGradeCalculator()
+
+	gradeCalculator.AddGrade("open source assignment", 80, Assignment)
+	gradeCalculator.AddGrade("exam 1", 100, Exam)
+	gradeCalculator.AddGrade("essay on ai ethics", 95, Essay)
+
+	actual_value := gradeCalculator.GetFinalGrade()
+
+	//planned method is to print final grades as 'A - Pass, D - Fail, ...' then checking string slices for comparison
+	if actual_value[4:] != "Pass" {
+		t.Errorf("Expected GetGrade to return 'Pass'; got 'Fail' instead")
+	}
+}
+
+func TestFail(t *testing.T) {
+	gradeCalculator := NewGradeCalculator()
+
+	gradeCalculator.AddGrade("open source assignment", 10, Assignment)
+	gradeCalculator.AddGrade("exam 1", 30, Exam)
+	gradeCalculator.AddGrade("essay on ai ethics", 65, Essay)
+
+	actual_value := gradeCalculator.GetFinalGrade()
+
+	//planned method is to print final grades as 'A - Pass, D - Fail, ...' then checking string slices for comparison
+	if actual_value[4:] != "Fail" {
+		t.Errorf("Expected GetGrade to return 'Fail'; got 'Pass' instead")
 	}
 }
